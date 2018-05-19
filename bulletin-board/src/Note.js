@@ -1,21 +1,47 @@
 import React, { Component } from 'react'
 import FaPencil from 'react-icons/lib/fa/pencil'
 import FaTrash from 'react-icons/lib/fa/trash'
+import FaFloppyO from 'react-icons/lib/fa/floppy-o'
 
 class Note extends Component{
     constructor(props){
         super(props)
+        this.state = {
+            editing: false
+        }
         this.edit = this.edit.bind(this)
         this.remove = this.remove.bind(this)
+        this.renderForm = this.renderForm.bind(this)
+        this.renderDisplay = this.renderDisplay.bind(this)
+        this.save = this.save.bind(this)
     }
     edit()
     {
-        alert('editing note')
+        this.setState({
+            editing: true
+        })
+       // alert('editing note')
     }
     remove(){
         alert('removing note')
     }
-    render()
+    save()
+    {
+        alert('saved')
+    }
+    renderForm(){
+        return(
+            <div className="note">
+                <form>
+                    <textarea />
+                    <button onClick={this.save} ><FaFloppyO /></button>
+                </form>
+
+             </div>
+
+        )
+    }
+    renderDisplay()
     {
         return(
             <div className="note">
@@ -27,6 +53,17 @@ class Note extends Component{
                    
             </div>
         )
+    }
+    render()
+    {
+        return this.state.editing ? this.renderForm() : this.renderDisplay()
+      /*  if(this.state.editing){
+            return this.renderForm()
+        
+        }
+        else{
+            return this.renderDispaly()
+        }*/
     }
 }
 export default Note
