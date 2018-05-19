@@ -19,17 +19,25 @@
      <div id="react-container"></div>
      <script type="text/babel">
 
+        /* const Banner = () => (
+             <div id="first">
+                    <h1 className="heading">Welcome to Rect</h1>
+                  <p>Have fun!</p>
+             </div>
+                  )*/
+
      class Hello extends React.Component {
          render(){
              return (
                  <div id="first">
-                   <h1 className="heading">Hello World</h1>
+                   <h1 className="heading">Hello {this.props.firstName}</h1>
                  </div>
              )
          }
      }
      ReactDOM.render(
-            <Hello></Hello>,
+            //<Banner />,
+            <Hello firstName="Eve"></Hello>,
             document.getElementById('react-container')
      )
 
