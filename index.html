@@ -54,7 +54,7 @@
          constructor(props){
              super(props)
              this.state = {
-                 checked: false
+                 checked: true
              }
              this.handleCheck = this.handleCheck.bind(this)
          }
@@ -75,7 +75,8 @@
              }
              return (
                  <div>
-                   <input type="Checkbox" onChange={this.handleCheck} />
+                   <input type="Checkbox" onChange={this.handleCheck}
+                     defaultChecked ={this.state.checked} />
                    <p>This box is {msg}</p>
                 </div>
              )
