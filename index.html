@@ -12,18 +12,42 @@
          {
             color: white;
         }
+        #myDiv {
+            background-color: blue;
+            height: 200px;
+            width: 200px;
+        }
     </style>
     <script crossorigin src="https://unpkg.com/react@16.3.2/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-    <title>Getting Started with React</title>
+    <title>Component Lifecycle</title>
 </head>
 
 <body>
     <div id="react-container"></div>
-    <script type="text/babel">
+   
+  <script type="text/babel">
+     class Box extends React.Component {
+         componentWillMount() {
+               alert('Component is about to Mount')
+         }
 
-        /* 
+         componentDidMount()
+         {
+             alert('component has just mount')
+         }
+         render(){
+             return(
+                 <div id="myDiv">
+
+                    </div>
+             )
+         }
+     }
+     ReactDOM.render(<Box />, document.getElementById('react-container'))
+/*
+         
           const Banner = () => (
              <div id="first">
                     <h1 className="heading">Welcome to Rect</h1>
@@ -31,9 +55,9 @@
              </div>
                   )
                   
-        */
+        
 
-    /* 
+    
     class Hello extends React.Component {
          render(){
              return (
@@ -49,7 +73,7 @@
       using firstName as props instead of props
      const HelloStateless = ({firstName}) => <h1>HELLO {firstName} </h1>
      
-     */
+     
      class Checkbox extends React.Component{
          constructor(props){
              super(props)
@@ -88,6 +112,7 @@
            <Checkbox />,
             document.getElementById('react-container')
      )
+     */
 
      
 
