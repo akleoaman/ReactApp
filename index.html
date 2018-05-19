@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   <meta charset="utf-8">
-   <style>
-       #first{
-           background-color: black;
-       }
-       .heading,p{
-           color: white;
-       }
-   </style>
-   <script crossorigin src="https://unpkg.com/react@16.3.2/umd/react.development.js"></script>
-   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-   <title>Getting Started with React</title>
-   </head>
-   <body>
-     <div id="react-container"></div>
-     <script type="text/babel">
+    <meta charset="utf-8">
+    <style>
+        #first {
+            background-color: black;
+        }
+
+        .heading
+         {
+            color: white;
+        }
+    </style>
+    <script crossorigin src="https://unpkg.com/react@16.3.2/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <title>Getting Started with React</title>
+</head>
+
+<body>
+    <div id="react-container"></div>
+    <script type="text/babel">
 
         /* 
           const Banner = () => (
@@ -47,10 +51,32 @@
      
      */
      class Checkbox extends React.Component{
+         constructor(props){
+             super(props)
+             this.state = {
+                 checked: false
+             }
+             this.handleCheck = this.handleCheck.bind(this)
+         }
+
+         handleCheck()
+         {
+             this.setState({
+                 checked: !this.state.checked
+             })
+         }
          render(){
+             var msg
+             if(this.state.checked){
+                 msg = "checked"
+             }
+             else{
+                 msg = "not checked"
+             }
              return (
                  <div>
-                   <input type="Checkbox" />
+                   <input type="Checkbox" onChange={this.handleCheck} />
+                   <p>This box is {msg}</p>
                 </div>
              )
          }
@@ -66,5 +92,6 @@
 
 
      </script>
-     </body>
-     </html>
+</body>
+
+</html>
