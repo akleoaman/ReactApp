@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
-import Note from './Note';
+import Board from './Board';
 
-ReactDOM.render(<Note />, document.getElementById('root'));
+ReactDOM.render(<Board />, document.getElementById('root'));
 registerServiceWorker();
