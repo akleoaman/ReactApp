@@ -37,9 +37,12 @@
              )
          }
      }
+     //const HelloStateless = (props) => <h1>HELLO {props.firstName} </h1>
+     // using firstName instead of props
+     const HelloStateless = ({firstName}) => <h1>HELLO {firstName} </h1>
      ReactDOM.render(
             //<Banner />,
-            <Hello firstName="Eve" version={16}></Hello>,
+            <HelloStateless firstName="Aman" version={16}></HelloStateless>,
             document.getElementById('react-container')
      )
 
