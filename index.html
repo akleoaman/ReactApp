@@ -19,14 +19,18 @@
      <div id="react-container"></div>
      <script type="text/babel">
 
-        /* const Banner = () => (
+        /* 
+          const Banner = () => (
              <div id="first">
                     <h1 className="heading">Welcome to Rect</h1>
                   <p>Have fun!</p>
              </div>
-                  )*/
+                  )
+                  
+        */
 
-     class Hello extends React.Component {
+    /* 
+    class Hello extends React.Component {
          render(){
              return (
                  <div id="first">
@@ -37,12 +41,24 @@
              )
          }
      }
-     //const HelloStateless = (props) => <h1>HELLO {props.firstName} </h1>
-     // using firstName instead of props
+     const HelloStateless = (props) => <h1>HELLO {props.firstName} </h1>
+      using firstName as props instead of props
      const HelloStateless = ({firstName}) => <h1>HELLO {firstName} </h1>
+     
+     */
+     class Checkbox extends React.Component{
+         render(){
+             return (
+                 <div>
+                   <input type="Checkbox" />
+                </div>
+             )
+         }
+     }
      ReactDOM.render(
             //<Banner />,
-            <HelloStateless firstName="Aman" version={16}></HelloStateless>,
+           // <HelloStateless firstName="Aman" version={16}></HelloStateless>,
+           <Checkbox />,
             document.getElementById('react-container')
      )
 
