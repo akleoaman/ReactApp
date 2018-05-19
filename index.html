@@ -6,7 +6,7 @@
        #first{
            background-color: black;
        }
-       .heading{
+       .heading,p{
            color: white;
        }
    </style>
@@ -31,13 +31,15 @@
              return (
                  <div id="first">
                    <h1 className="heading">Hello {this.props.firstName}</h1>
+                   <p> Learning React Version {this.props.version}
+                   </p>
                  </div>
              )
          }
      }
      ReactDOM.render(
             //<Banner />,
-            <Hello firstName="Eve"></Hello>,
+            <Hello firstName="Eve" version={16}></Hello>,
             document.getElementById('react-container')
      )
 
